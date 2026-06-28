@@ -1,0 +1,345 @@
+[
+  {
+    "ContainingType": "CodeVaultAPI.Controllers.DevelopersController",
+    "Method": "AddDevelopers",
+    "RelativePath": "api/Developers/AddDevelopers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "developers",
+        "Type": "CodeVaultAPI.Models.Developers",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CodeVaultAPI.Models.Developers",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CodeVaultAPI.Controllers.DevelopersController",
+    "Method": "DeleteDevelopers",
+    "RelativePath": "api/Developers/DeleteDevelopers/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CodeVaultAPI.Controllers.DevelopersController",
+    "Method": "GetDeveloperByEmail",
+    "RelativePath": "api/Developers/GetDeveloperByEmail/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CodeVaultAPI.Controllers.DevelopersController",
+    "Method": "GetDevelopers",
+    "RelativePath": "api/Developers/GetDevelopers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CodeVaultAPI.Models.Developers, CodeVaultAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CodeVaultAPI.Controllers.DevelopersController",
+    "Method": "GetDevelopersById",
+    "RelativePath": "api/Developers/GetDevelopersById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CodeVaultAPI.Controllers.DevelopersController",
+    "Method": "UpdateDevelopers",
+    "RelativePath": "api/Developers/UpdateDevelopers/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "developers",
+        "Type": "CodeVaultAPI.Models.Developers",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CodeVaultAPI.Models.Developers",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CodeVaultAPI.Controllers.ProjectsController",
+    "Method": "AddProjects",
+    "RelativePath": "api/Projects/AddProjects",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "projects",
+        "Type": "CodeVaultAPI.Models.Projects",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CodeVaultAPI.Models.Projects",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CodeVaultAPI.Controllers.ProjectsController",
+    "Method": "DeleteProjects",
+    "RelativePath": "api/Projects/DeleteProjects/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CodeVaultAPI.Controllers.ProjectsController",
+    "Method": "GetProjects",
+    "RelativePath": "api/Projects/GetProjects",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CodeVaultAPI.Models.Projects, CodeVaultAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CodeVaultAPI.Controllers.ProjectsController",
+    "Method": "GetProjectsById",
+    "RelativePath": "api/Projects/GetProjectsById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CodeVaultAPI.Controllers.ProjectsController",
+    "Method": "UpdateProjects",
+    "RelativePath": "api/Projects/UpdateProjects/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "projects",
+        "Type": "CodeVaultAPI.Models.Projects",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CodeVaultAPI.Models.Projects",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CodeVaultAPI.Controllers.TechnologiesController",
+    "Method": "AddTechnologies",
+    "RelativePath": "api/Technologies/AddTechnologies",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "technologies",
+        "Type": "CodeVaultAPI.Models.Technologies",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CodeVaultAPI.Models.Technologies",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CodeVaultAPI.Controllers.TechnologiesController",
+    "Method": "DeleteTechnologies",
+    "RelativePath": "api/Technologies/DeleteTechnologies/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CodeVaultAPI.Controllers.TechnologiesController",
+    "Method": "GetTechnologies",
+    "RelativePath": "api/Technologies/GetTechnologies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CodeVaultAPI.Models.Technologies, CodeVaultAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CodeVaultAPI.Controllers.TechnologiesController",
+    "Method": "GetTechnologiesById",
+    "RelativePath": "api/Technologies/GetTechnologiesById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CodeVaultAPI.Controllers.TechnologiesController",
+    "Method": "UpdateTechnologies",
+    "RelativePath": "api/Technologies/UpdateTechnologies/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "technologies",
+        "Type": "CodeVaultAPI.Models.Technologies",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CodeVaultAPI.Models.Technologies",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+﻿@model CodeVaultMVC.Models.Projects
+@{
+    ViewData["Title"] = "Proje Sil";
+}
+
+<div class="card col-md-5 mx-auto border-danger">
+    <div class="card-body p-4">
+        <h5 class="fw-bold text-danger mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Silme Onayı</h5>
+        <p><strong>@Model.ProjectName</strong> projesini silmek istediğinize emin misiniz?</p>
+        <p class="text-muted small mb-4">Bu işlem geri alınamaz.</p>
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="ProjeID" />
+            <button type="submit" class="btn btn-danger">Evet, Sil</button>
+            <a asp-action="Index" class="btn btn-outline-secondary ms-2">Vazgeç</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+@model CodeVaultMVC.ViewModels.TaskFormVM
+@{
+    ViewData["Title"] = "Yeni Görev";
+}
+
+<div class="card col-md-8 mx-auto">
+    <div class="card-body p-4 p-md-5">
+        <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
+            <div style="background: rgba(99, 102, 241, 0.1); color: #6366f1; border-radius: 14px; padding: 12px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-list-task fs-3"></i>
+            </div>
+            <div>
+                <h5 class="fw-bold mb-0">Yeni Görev Oluştur</h5>
+                <p class="text-muted small mb-0">Projeniz için yeni bir iş paketi tanımlayın</p>
+            </div>
+        </div>
+
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger mb-3"></div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Görev Adı</label>
+                    <input asp-for="Task.TaskName" class="form-control" placeholder="Görev başlığı girin..." required />
+                    <span asp-validation-for="Task.TaskName" class="text-danger small"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Proje Seç</label>
+                    <select asp-for="Task.ProjectID" class="form-select" required>
+                        <option value="">Seçiniz...</option>
+                        @foreach (var p in Model.Projects)
+                        {
+                            <option value="@p.ProjeID">@p.ProjectName</option>
+                        }
+                    </select>
+                </div>
+                <input type="hidden" asp-for="Task.DeveloperID" />
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Teknoloji</label>
+                    <select asp-for="Task.TechnologyID" class="form-select" required>
+                        <option value="">Seçiniz...</option>
+                        @foreach (var t in Model.Technologies)
+                        {
+                            <option value="@t.TechnologyID">@t.TechnologyName</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Durum</label>
+                    <select asp-for="Task.Status" class="form-select">
+                        <option value="Bekliyor">Bekliyor</option>
+                        <option value="Yapılıyor">Yapılıyor</option>
+                        <option value="Tamamlandı">Tamamlandı</option>
+                    </select>
+                </div>
+                <div class="col-md-12 mb-4">
+                    <label class="form-label">Açıklama</label>
+                    <textarea asp-for="Task.Description" class="form-control" rows="3" placeholder="Görev detaylarını açıklayın..."></textarea>
+                </div>
+            </div>
+            
+            <div class="d-flex justify-content-end gap-2 border-top pt-4">
+                <a asp-action="Index" class="btn btn-outline-secondary">İptal</a>
+                <button type="submit" class="btn btn-primary px-4">Görev Kaydet</button>
+            </div>
+        </form>
+    </div>
+</div>

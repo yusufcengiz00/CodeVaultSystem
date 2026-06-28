@@ -1,0 +1,246 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=device-width, initial-scale=initial-scale=1.0" />
+    <title>Rol Seçimi - CodeVault</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a2e);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        @@keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 900px;
+            z-index: 10;
+        }
+
+        .header-title {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 2.8rem;
+            letter-spacing: -0.5px;
+            text-align: center;
+            margin-bottom: 8px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .header-title span {
+            background: linear-gradient(135deg, #e94560, #ff6b81);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.1rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .role-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            color: #ffffff;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .role-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .role-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .role-card:hover::before {
+            opacity: 1;
+        }
+
+        .role-developer:hover {
+            box-shadow: 0 20px 40px rgba(138, 43, 226, 0.3);
+            border-color: rgba(138, 43, 226, 0.4);
+        }
+
+        .role-admin:hover {
+            box-shadow: 0 20px 40px rgba(0, 191, 255, 0.3);
+            border-color: rgba(0, 191, 255, 0.4);
+        }
+
+        .icon-circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 2.2rem;
+            transition: all 0.4s;
+        }
+
+        .role-developer .icon-circle {
+            background: rgba(138, 43, 226, 0.1);
+            color: #bd93f9;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+        }
+
+        .role-developer:hover .icon-circle {
+            background: linear-gradient(135deg, #8a2be2, #da70d6);
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+            transform: rotate(-10deg);
+        }
+
+        .role-admin .icon-circle {
+            background: rgba(0, 191, 255, 0.1);
+            color: #8be9fd;
+            border: 1px solid rgba(0, 191, 255, 0.2);
+        }
+
+        .role-admin:hover .icon-circle {
+            background: linear-gradient(135deg, #00bfff, #00f2fe);
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+            transform: rotate(10deg);
+        }
+
+        .role-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        .role-desc {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.6;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .btn-select {
+            padding: 12px 35px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            border: none;
+            width: 100%;
+        }
+
+        .role-developer .btn-select {
+            background: rgba(138, 43, 226, 0.15);
+            color: #bd93f9;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+        }
+
+        .role-developer:hover .btn-select {
+            background: linear-gradient(135deg, #8a2be2, #da70d6);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+            border-color: transparent;
+        }
+
+        .role-admin .btn-select {
+            background: rgba(0, 191, 255, 0.15);
+            color: #8be9fd;
+            border: 1px solid rgba(0, 191, 255, 0.3);
+        }
+
+        .role-admin:hover .btn-select {
+            background: linear-gradient(135deg, #00bfff, #00f2fe);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 191, 255, 0.4);
+            border-color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container py-5">
+        <h1 class="header-title">Code<span>Vault</span> Portal</h1>
+        <p class="header-subtitle">Devam etmek için portal rolünüzü seçin</p>
+
+        <div class="row g-4 justify-content-center">
+            <!-- Developer Card -->
+            <div class="col-md-5">
+                <a asp-action="Login" asp-route-role="Developer" class="role-card role-developer">
+                    <div class="icon-circle">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+                    <h3 class="role-title">Geliştirici Girişi</h3>
+                    <p class="role-desc">Kendinize ait görevleri incelemek, yorumlarınızı yönetmek ve projelerinize ait kod gelişimini takip etmek için giriş yapın.</p>
+                    <button class="btn-select">Geliştirici Olarak Devam Et</button>
+                </a>
+            </div>
+
+            <!-- Admin Card -->
+            <div class="col-md-5">
+                <a asp-action="Login" asp-route-role="Admin" class="role-card role-admin">
+                    <div class="icon-circle">
+                        <i class="bi bi-shield-lock"></i>
+                    </div>
+                    <h3 class="role-title">Yönetici Girişi</h3>
+                    <p class="role-desc">Geliştirici listesini, proje kütüphanelerini, kullanılan teknolojileri ve tüm sistem ayarlarını yönetmek için giriş yapın.</p>
+                    <button class="btn-select">Yönetici Olarak Devam Et</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+@model CodeVaultMVC.ViewModels.AdminDashboardViewModel
+@{
+    ViewData["Title"] = "Yönetici Paneli";
+}
+
+<div class="row g-4 mb-5">
+    <div class="col-md-4">
+        <div class="card p-4 border-0 position-relative overflow-hidden" style="background: linear-gradient(135deg, #1e1b4b 0%, #1e293b 100%); border: 1px solid rgba(99, 102, 241, 0.2) !important;">
+            <div class="position-absolute top-0 end-0 p-3 opacity-10" style="font-size: 5rem; color: #6366f1; transform: translate(20px, -20px);">
+                <i class="bi bi-folder2"></i>
+            </div>
+            <div class="d-flex align-items-center gap-4 position-relative">
+                <div style="background: linear-gradient(135deg, #4f46e5, #6366f1); border-radius: 16px; padding: 16px; box-shadow: 0 8px 16px rgba(79, 70, 229, 0.3); display: flex; align-items: center; justify-content: center;">
+                    <i class="bi bi-folder2 text-white fs-3"></i>
+                </div>
+                <div>
+                    <div class="text-muted small fw-medium" style="color: #94a3b8 !important;">Toplam Proje</div>
+                    <div class="fw-bold fs-2 text-white mt-1">@Model.Projects.Count</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card p-4 border-0 position-relative overflow-hidden" style="background: linear-gradient(135deg, #063970 0%, #1e293b 100%); border: 1px solid rgba(14, 165, 233, 0.2) !important;">
+            <div class="position-absolute top-0 end-0 p-3 opacity-10" style="font-size: 5rem; color: #0ea5e9; transform: translate(20px, -20px);">
+                <i class="bi bi-cpu"></i>
+            </div>
+            <div class="d-flex align-items-center gap-4 position-relative">
+                <div style="background: linear-gradient(135deg, #0ea5e9, #38bdf8); border-radius: 16px; padding: 16px; box-shadow: 0 8px 16px rgba(14, 165, 233, 0.3); display: flex; align-items: center; justify-content: center;">
+                    <i class="bi bi-cpu text-white fs-3"></i>
+                </div>
+                <div>
+                    <div class="text-muted small fw-medium" style="color: #94a3b8 !important;">Toplam Teknoloji</div>
+                    <div class="fw-bold fs-2 text-white mt-1">@Model.Technologies.Count</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-4 border-0 position-relative overflow-hidden" style="background: linear-gradient(135deg, #4c0519 0%, #1e293b 100%); border: 1px solid rgba(244, 63, 94, 0.2) !important;">
+            <div class="position-absolute top-0 end-0 p-3 opacity-10" style="font-size: 5rem; color: #f43f5e; transform: translate(20px, -20px);">
+                <i class="bi bi-people"></i>
+            </div>
+            <div class="d-flex align-items-center gap-4 position-relative">
+                <div style="background: linear-gradient(135deg, #e11d48, #f43f5e); border-radius: 16px; padding: 16px; box-shadow: 0 8px 16px rgba(244, 63, 94, 0.3); display: flex; align-items: center; justify-content: center;">
+                    <i class="bi bi-people text-white fs-3"></i>
+                </div>
+                <div>
+                    <div class="text-muted small fw-medium" style="color: #94a3b8 !important;">Geliştiriciler</div>
+                    <div class="fw-bold fs-2 text-white mt-1">@Model.Developers.Count</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card border-0" style="background: #1e293b; border: 1px solid #334155 !important;">
+    <div class="p-4 border-bottom border-secondary d-flex align-items-center justify-content-between">
+        <div>
+            <h5 class="fw-bold mb-0 text-white">Sistem Kayıtları</h5>
+            <p class="text-muted small mb-0">CodeVault veritabanı tablolarının genel durum özeti</p>
+        </div>
+        <div class="d-flex gap-2">
+            <a asp-action="DownloadExcel" class="btn btn-sm btn-outline-success d-inline-flex align-items-center gap-2" style="border-color: #10b981; color: #34d399;">
+                <i class="bi bi-file-earmark-spreadsheet"></i> Excel İndir
+            </a>
+            <a asp-action="DownloadPdf" class="btn btn-sm btn-outline-danger d-inline-flex align-items-center gap-2" style="border-color: #ef4444; color: #f87171;">
+                <i class="bi bi-file-earmark-pdf"></i> PDF İndir
+            </a>
+        </div>
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th class="ps-4 text-muted" style="border-bottom: 1px solid #334155;">Tablo Adı</th>
+                        <th class="text-muted" style="border-bottom: 1px solid #334155;">Kayıt Sayısı</th>
+                        <th class="text-center text-muted" style="border-bottom: 1px solid #334155;">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ps-4 fw-semibold text-white">Projeler</td>
+                        <td><span class="badge bg-indigo px-3 py-2" style="background: rgba(99, 102, 241, 0.2); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.3);">@Model.Projects.Count Adet</span></td>
+                        <td class="text-center"><a asp-controller="Projects" asp-action="Index" class="btn btn-sm btn-outline-primary px-3">Yönet</a></td>
+                    </tr>
+                    <tr>
+                        <td class="ps-4 fw-semibold text-white">Teknolojiler</td>
+                        <td><span class="badge bg-cyan px-3 py-2" style="background: rgba(14, 165, 233, 0.2); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3);">@Model.Technologies.Count Adet</span></td>
+                        <td class="text-center"><a asp-controller="Technologies" asp-action="Index" class="btn btn-sm btn-outline-info px-3" style="border-color:#0ea5e9; color:#38bdf8;">Yönet</a></td>
+                    </tr>
+                    <tr>
+                        <td class="ps-4 fw-semibold text-white">Geliştiriciler</td>
+                        <td><span class="badge bg-rose px-3 py-2" style="background: rgba(244, 63, 94, 0.2); color: #fda4af; border: 1px solid rgba(244, 63, 94, 0.3);">@Model.Developers.Count Adet</span></td>
+                        <td class="text-center"><a asp-controller="Developers" asp-action="Index" class="btn btn-sm btn-outline-danger px-3" style="border-color:#f43f5e; color:#fda4af;">Yönet</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

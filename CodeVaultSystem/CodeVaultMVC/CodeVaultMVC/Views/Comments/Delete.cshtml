@@ -1,0 +1,26 @@
+@model CodeVaultMVC.Models.MVC_Tables.Comments
+@{
+    ViewData["Title"] = "Yorum Sil";
+}
+
+<div class="card col-md-6 mx-auto" style="border: 1px solid #fecaca; box-shadow: 0 4px 25px rgba(239, 68, 68, 0.05);">
+    <div class="card-body p-4 p-md-5 text-center">
+        <div style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px auto; font-size: 2.2rem;">
+            <i class="bi bi-exclamation-triangle"></i>
+        </div>
+        <h4 class="fw-bold text-danger mb-2">Silme Onayı</h4>
+        <p class="text-muted mb-3">Bu yorumu kalıcı olarak silmek istediğinize emin misiniz?</p>
+        
+        <blockquote class="blockquote border-start border-danger border-3 ps-3 text-start text-muted small mb-4 py-2" style="background: #fff5f5; border-radius: 0 8px 8px 0; font-size: 0.9rem;">
+            @Model.Content
+        </blockquote>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="CommentID" />
+            <div class="d-flex justify-content-center gap-2 border-top pt-4">
+                <a asp-action="Index" class="btn btn-outline-secondary px-4">Vazgeç</a>
+                <button type="submit" class="btn btn-danger px-4 text-white" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border: none;">Evet, Yorumu Sil</button>
+            </div>
+        </form>
+    </div>
+</div>

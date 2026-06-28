@@ -1,0 +1,31 @@
+﻿@model CodeVaultMVC.Models.Developers
+@{
+    ViewData["Title"] = "Yeni Geliştirici";
+}
+
+<div class="card col-md-6 mx-auto">
+    <div class="card-body p-4">
+        <h5 class="fw-bold mb-4">Yeni Geliştirici Ekle</h5>
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+            <div class="mb-3">
+                <label class="form-label">Ad Soyad</label>
+                <input asp-for="FullName" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">E-Mail</label>
+                <input asp-for="EMail" type="email" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">GitHub URL</label>
+                <input asp-for="GithubUrl" class="form-control" />
+            </div>
+            <div class="mb-4">
+                <label class="form-label">LinkedIn URL</label>
+                <input asp-for="LinkedinUrl" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+            <a asp-action="Index" class="btn btn-outline-secondary ms-2">İptal</a>
+        </form>
+    </div>
+</div>

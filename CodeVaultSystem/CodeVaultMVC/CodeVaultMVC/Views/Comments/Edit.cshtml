@@ -1,0 +1,42 @@
+@model CodeVaultMVC.ViewModels.CommentFormVM
+@{
+    ViewData["Title"] = "Yorum Düzenle";
+}
+
+<div class="card col-md-6 mx-auto">
+    <div class="card-body p-4 p-md-5">
+        <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
+            <div style="background: rgba(219, 39, 119, 0.1); color: #db2777; border-radius: 14px; padding: 12px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-pencil-square fs-3"></i>
+            </div>
+            <div>
+                <h5 class="fw-bold mb-0">Yorumu Düzenle</h5>
+                <p class="text-muted small mb-0">Mevcut yorum içeriğini güncelleyin</p>
+            </div>
+        </div>
+
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Comment.CommentID" />
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger mb-3"></div>
+            <div class="mb-3">
+                <label class="form-label">Yorum</label>
+                <textarea asp-for="Comment.Content" class="form-control" rows="4" placeholder="Yorum yazın..." required></textarea>
+                <span asp-validation-for="Comment.Content" class="text-danger small"></span>
+            </div>
+            <div class="mb-4">
+                <label class="form-label">İlgili Görev</label>
+                <select asp-for="Comment.TaskID" class="form-select" required>
+                    <option value="">Seçiniz...</option>
+                    @foreach (var t in Model.Tasks)
+                    {
+                        <option value="@t.TaskID" selected="@(t.TaskID == Model.Comment.TaskID)">@t.TaskName</option>
+                    }
+                </select>
+            </div>
+            <div class="d-flex justify-content-end gap-2 border-top pt-4">
+                <a asp-action="Index" class="btn btn-outline-secondary">İptal</a>
+                <button type="submit" class="btn btn-warning px-4 text-white" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border: none;">Güncelle</button>
+            </div>
+        </form>
+    </div>
+</div>

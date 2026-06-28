@@ -1,0 +1,231 @@
+@model CodeVaultMVC.Models.ViewModel.UserDashboardViewModel
+@{
+    ViewData["Title"] = "Geliştirici Paneli";
+}
+
+<!-- Google Fonts & Custom CSS Dashboard Overrides -->
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    .dashboard-container {
+        font-family: 'Outfit', sans-serif;
+        color: #1e293b;
+        position: relative;
+    }
+
+    /* Glow Elements in background */
+    .bg-glow-1 {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(255,255,255,0) 70%);
+        top: -100px;
+        right: -50px;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    .bg-glow-2 {
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, rgba(255,255,255,0) 70%);
+        bottom: -150px;
+        left: -100px;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
+        border-radius: 24px;
+        padding: 60px 40px;
+        color: #ffffff;
+        margin-bottom: 40px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="white" opacity="0.15"/></svg>') repeat;
+        opacity: 0.3;
+        pointer-events: none;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        letter-spacing: -0.5px;
+    }
+
+    .hero-title span {
+        background: linear-gradient(135deg, #a855f7, #f43f5e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 600px;
+        line-height: 1.6;
+        margin-bottom: 0;
+    }
+
+    /* Interactive Gradient Cards */
+    .dashboard-card {
+        border-radius: 20px;
+        padding: 40px;
+        color: #ffffff;
+        height: 100%;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        position: relative;
+        overflow: hidden;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .card-tasks {
+        background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    }
+
+    .card-comments {
+        background: linear-gradient(135deg, #db2777 0%, #e11d48 100%);
+    }
+
+    .dashboard-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-tasks:hover {
+        box-shadow: 0 20px 40px rgba(79, 70, 229, 0.3);
+    }
+
+    .card-comments:hover {
+        box-shadow: 0 20px 40px rgba(219, 39, 119, 0.3);
+    }
+
+    .card-icon-wrap {
+        width: 60px;
+        height: 60px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        margin-bottom: 24px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: transform 0.4s;
+    }
+
+    .dashboard-card:hover .card-icon-wrap {
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    .card-count {
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 8px;
+        letter-spacing: -1px;
+    }
+
+    .card-label {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    .card-text {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.5;
+        margin-bottom: 30px;
+        font-weight: 300;
+    }
+
+    .card-action-btn {
+        background: rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 12px;
+        padding: 12px 24px;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.3s;
+        backdrop-filter: blur(5px);
+        display: inline-block;
+    }
+
+    .card-action-btn:hover {
+        background: #ffffff;
+        color: #1e293b;
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+        border-color: #ffffff;
+    }
+</style>
+
+<div class="dashboard-container">
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1 class="hero-title">Hoş Geldin, <span>@User.Identity?.Name</span></h1>
+        <p class="hero-subtitle">CodeVault portalına başarıyla giriş yaptınız. Bu panel üzerinden atanan görevlerinizi detaylıca takip edebilir, geliştirdiğiniz çözümler hakkında yorumlar ekleyebilir ve projenizi hızlıca güncelleyebilirsiniz.</p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="row g-4">
+        <!-- Tasks Card -->
+        <div class="col-md-6">
+            <div class="dashboard-card card-tasks">
+                <div>
+                    <div class="card-icon-wrap">
+                        <i class="bi bi-list-task"></i>
+                    </div>
+                    <div class="card-count">@Model.MyTasks.Count</div>
+                    <div class="card-label">Görevlerim</div>
+                    <p class="card-text">Size atanmış olan görev listesini inceleyin, durumlarını güncelleyin veya projeniz için yeni iş paketleri oluşturarak takip mekanizmasını güçlendirin.</p>
+                </div>
+                <div>
+                    <a asp-controller="Tasks" asp-action="Index" class="card-action-btn w-100">Görevleri Yönet <i class="bi bi-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comments Card -->
+        <div class="col-md-6">
+            <div class="dashboard-card card-comments">
+                <div>
+                    <div class="card-icon-wrap">
+                        <i class="bi bi-chat-left-text"></i>
+                    </div>
+                    <div class="card-count">@Model.MyComments.Count</div>
+                    <div class="card-label">Yorumlarım</div>
+                    <p class="card-text">Daha önce eklediğiniz yorumları inceleyin, görevler üzerinde tartışmalara katılın veya yeni yorumlar ekleyerek ekip içi iletişimi canlı tutun.</p>
+                </div>
+                <div>
+                    <a asp-controller="Comments" asp-action="Index" class="card-action-btn w-100">Yorumları İncele <i class="bi bi-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+﻿@{
+    var controller = ViewContext.RouteData.Values["Controller"]?.ToString();
+
+    // 1. Eğer Controller "Account" ise, her zaman AuthLayout kullan
+    if (controller == "Account")
+    {
+        Layout = "_AuthLayout";
+    }
+    // 2. Eğer Admin girişi yapmışsa AdminLayout kullan
+    else if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        Layout = "_AdminLayout";
+    }
+    // 3. Normal kullanıcılar ve diğer herkes için standart layout
+    else
+    {
+        Layout = "_Layout";
+    }
+}

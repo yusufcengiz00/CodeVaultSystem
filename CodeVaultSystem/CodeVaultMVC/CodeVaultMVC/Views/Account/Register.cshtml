@@ -1,0 +1,84 @@
+@model CodeVaultMVC.ViewModels.RegisterViewModel
+@{
+    Layout = "_AuthLayout"; 
+    var role = ViewBag.SelectedRole as string;
+    var isDeveloper = role == "Developer";
+    ViewData["Title"] = isDeveloper ? "Geliştirici Kaydı" : "Yönetici Kaydı";
+}
+
+@if (isDeveloper)
+{
+    <style>
+        .form-control:focus {
+            border-color: #da70d6 !important;
+            box-shadow: 0 0 0 3px rgba(218, 112, 214, 0.2) !important;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #8a2be2, #da70d6) !important;
+        }
+        .btn-primary:hover {
+            filter: brightness(1.15);
+        }
+        .auth-logo span, .login-link-highlight {
+            color: #da70d6 !important;
+        }
+    </style>
+}
+else
+{
+    <style>
+        .form-control:focus {
+            border-color: #00bfff !important;
+            box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.2) !important;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #00bfff, #00f2fe) !important;
+        }
+        .btn-primary:hover {
+            filter: brightness(1.15);
+        }
+        .auth-logo span, .login-link-highlight {
+            color: #00bfff !important;
+        }
+    </style>
+}
+
+<h5 class="text-white fw-semibold mb-1">@(isDeveloper ? "Geliştirici Kayıt Formu" : "Yönetici Kayıt Formu")</h5>
+<p style="color:rgba(255,255,255,0.4); font-size:0.85rem;" class="mb-4">CodeVault portalına kayıt olun</p>
+
+<form asp-controller="Account" asp-action="Register" asp-route-role="@role" method="post">
+    <input type="hidden" name="role" value="@role" />
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger mb-3"></div>
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Ad Soyad</label>
+        <input asp-for="Name" class="form-control" placeholder="Ad Soyad" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">E-posta</label>
+        <input asp-for="Email" class="form-control" placeholder="ornek@email.com" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label">Parola</label>
+        <input asp-for="Password" class="form-control" type="password" placeholder="En az 8 karakter" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="mb-4">
+        <label asp-for="ConfirmPassword" class="form-label">Parola Tekrar</label>
+        <input asp-for="ConfirmPassword" class="form-control" type="password" placeholder="••••••••" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+    <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+    </div>
+</form>
+
+<div class="auth-footer mt-4">
+    <a asp-action="Login" asp-route-role="@role">Zaten hesabın var mı? <strong class="login-link-highlight">Giriş yap</strong></a>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

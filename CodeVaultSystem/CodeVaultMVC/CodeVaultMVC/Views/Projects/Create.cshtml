@@ -1,0 +1,31 @@
+﻿@model CodeVaultMVC.Models.Projects
+@{
+    ViewData["Title"] = "Yeni Proje";
+}
+
+<div class="card col-md-6 mx-auto">
+    <div class="card-body p-4">
+        <h5 class="fw-bold mb-4">Yeni Proje Ekle</h5>
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+            <div class="mb-3">
+                <label class="form-label">Proje Adı</label>
+                <input asp-for="ProjectName" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Açıklama</label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Proje URL</label>
+                <input asp-for="ProjectUrl" class="form-control" />
+            </div>
+            <div class="mb-4">
+                <label class="form-label">Durum</label>
+                <input asp-for="Status" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+            <a asp-action="Index" class="btn btn-outline-secondary ms-2">İptal</a>
+        </form>
+    </div>
+</div>

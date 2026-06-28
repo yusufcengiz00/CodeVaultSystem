@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CodeVaultMVC.Models.Technologies>
+@{
+    ViewData["Title"] = "Teknolojiler";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h5 class="fw-bold mb-0">Teknolojiler</h5>
+    <a asp-action="Create" class="btn btn-primary btn-sm"><i class="bi bi-plus-lg me-1"></i>Yeni Teknoloji</a>
+</div>
+
+<div class="card">
+    <div class="card-body p-0">
+        <table class="table mb-0">
+            <thead>
+                <tr>
+                    <th class="ps-4">Teknoloji Adı</th>
+                    <th>Kategori</th>
+                    <th>Versiyon</th>
+                    <th class="text-center">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="ps-4 fw-semibold">@item.TechnologyName</td>
+                        <td><span class="badge bg-info text-dark">@item.Category</span></td>
+                        <td class="text-muted small">@item.Version</td>
+                        <td class="text-center">
+                            <a asp-action="Edit" asp-route-id="@item.TechnologyID" class="btn btn-sm btn-outline-primary me-1">Düzenle</a>
+                            <a asp-action="Delete" asp-route-id="@item.TechnologyID" class="btn btn-sm btn-outline-danger">Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

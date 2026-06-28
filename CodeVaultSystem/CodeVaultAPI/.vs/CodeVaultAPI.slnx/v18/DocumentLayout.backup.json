@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|c:\\projects\\codevaultsystem\\codevaultsystem\\codevaultapi\\codevaultapi\\models\\technologies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|solutionrelative:codevaultapi\\models\\technologies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|c:\\projects\\codevaultsystem\\codevaultsystem\\codevaultapi\\codevaultapi\\models\\developers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|solutionrelative:codevaultapi\\models\\developers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|c:\\projects\\codevaultsystem\\codevaultsystem\\codevaultapi\\codevaultapi\\models\\projects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|solutionrelative:codevaultapi\\models\\projects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|c:\\projects\\codevaultsystem\\codevaultsystem\\codevaultapi\\codevaultapi\\models\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|solutionrelative:codevaultapi\\models\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|c:\\projects\\codevaultsystem\\codevaultsystem\\codevaultapi\\codevaultapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|solutionrelative:codevaultapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|c:\\projects\\codevaultsystem\\codevaultsystem\\codevaultapi\\codevaultapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|solutionrelative:codevaultapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|c:\\projects\\codevaultsystem\\codevaultsystem\\codevaultapi\\codevaultapi\\controllers\\technologiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|solutionrelative:codevaultapi\\controllers\\technologiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|c:\\projects\\codevaultsystem\\codevaultsystem\\codevaultapi\\codevaultapi\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|solutionrelative:codevaultapi\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|c:\\projects\\codevaultsystem\\codevaultsystem\\codevaultapi\\codevaultapi\\controllers\\developerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{781752F7-7094-FD49-62C2-01B11CFE2E99}|CodeVaultAPI\\CodeVaultAPI.csproj|solutionrelative:codevaultapi\\controllers\\developerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\Program.cs",
+              "RelativeDocumentMoniker": "CodeVaultAPI\\Program.cs",
+              "ToolTip": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\Program.cs",
+              "RelativeToolTip": "CodeVaultAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T18:26:54.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\Models\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "CodeVaultAPI\\Models\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\Models\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "CodeVaultAPI\\Models\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T18:19:50.574Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "CodeVaultAPI\\appsettings.json",
+              "ToolTip": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\appsettings.json",
+              "RelativeToolTip": "CodeVaultAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-24T18:18:53.186Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Projects.cs",
+              "DocumentMoniker": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\Models\\Projects.cs",
+              "RelativeDocumentMoniker": "CodeVaultAPI\\Models\\Projects.cs",
+              "ToolTip": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\Models\\Projects.cs",
+              "RelativeToolTip": "CodeVaultAPI\\Models\\Projects.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:45:19.116Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Technologies.cs",
+              "DocumentMoniker": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\Models\\Technologies.cs",
+              "RelativeDocumentMoniker": "CodeVaultAPI\\Models\\Technologies.cs",
+              "ToolTip": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\Models\\Technologies.cs",
+              "RelativeToolTip": "CodeVaultAPI\\Models\\Technologies.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:44:58.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Developers.cs",
+              "DocumentMoniker": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\Models\\Developers.cs",
+              "RelativeDocumentMoniker": "CodeVaultAPI\\Models\\Developers.cs",
+              "ToolTip": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\Models\\Developers.cs",
+              "RelativeToolTip": "CodeVaultAPI\\Models\\Developers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:44:00.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TechnologiesController.cs",
+              "DocumentMoniker": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\Controllers\\TechnologiesController.cs",
+              "RelativeDocumentMoniker": "CodeVaultAPI\\Controllers\\TechnologiesController.cs",
+              "ToolTip": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\Controllers\\TechnologiesController.cs",
+              "RelativeToolTip": "CodeVaultAPI\\Controllers\\TechnologiesController.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAwCsAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:24:18.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProjectsController.cs",
+              "DocumentMoniker": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\Controllers\\ProjectsController.cs",
+              "RelativeDocumentMoniker": "CodeVaultAPI\\Controllers\\ProjectsController.cs",
+              "ToolTip": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\Controllers\\ProjectsController.cs",
+              "RelativeToolTip": "CodeVaultAPI\\Controllers\\ProjectsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:01:38.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DevelopersController.cs",
+              "DocumentMoniker": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\Controllers\\DevelopersController.cs",
+              "RelativeDocumentMoniker": "CodeVaultAPI\\Controllers\\DevelopersController.cs",
+              "ToolTip": "C:\\Projects\\CodeVaultSystem\\CodeVaultSystem\\CodeVaultAPI\\CodeVaultAPI\\Controllers\\DevelopersController.cs",
+              "RelativeToolTip": "CodeVaultAPI\\Controllers\\DevelopersController.cs",
+              "ViewState": "AgIAAAQAAABAMzMzM3MvwDkAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T22:54:28.754Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

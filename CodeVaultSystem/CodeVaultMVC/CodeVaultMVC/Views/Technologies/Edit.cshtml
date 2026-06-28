@@ -1,0 +1,28 @@
+﻿@model CodeVaultMVC.Models.Technologies
+@{
+    ViewData["Title"] = "Teknoloji Düzenle";
+}
+
+<div class="card col-md-6 mx-auto">
+    <div class="card-body p-4">
+        <h5 class="fw-bold mb-4">Teknoloji Düzenle</h5>
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="TechnologyID" />
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+            <div class="mb-3">
+                <label class="form-label">Teknoloji Adı</label>
+                <input asp-for="TechnologyName" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Kategori</label>
+                <input asp-for="Category" class="form-control" />
+            </div>
+            <div class="mb-4">
+                <label class="form-label">Versiyon</label>
+                <input asp-for="Version" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-warning">Güncelle</button>
+            <a asp-action="Index" class="btn btn-outline-secondary ms-2">İptal</a>
+        </form>
+    </div>
+</div>
