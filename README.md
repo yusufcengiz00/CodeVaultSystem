@@ -20,6 +20,66 @@ Proje, birbirleriyle `HttpClient` üzerinden haberleşen iki ana katmandan oluş
 
 ---
 
+## 🛠️ Kullanılan Teknolojiler
+
+| Katman | Teknoloji / Kütüphane | Versiyon | Kullanım Amacı |
+|---|---|---|---|
+| Her ikisi | ASP.NET Core | .NET 8 | Web çerçevesi |
+| Her ikisi | Entity Framework Core | 9.x | ORM / Veritabanı erişimi |
+| Her ikisi | MS SQL Server / LocalDB | — | İlişkisel veritabanı |
+| MVC | ASP.NET Core Identity | 9.x | Kullanıcı & rol yönetimi |
+| MVC | Newtonsoft.Json | 13.x | API yanıtlarını deserialize etme |
+| MVC | EPPlus | 7.x | Excel (.xlsx) dışa aktarma |
+| MVC | QuestPDF | 2024.x | PDF rapor oluşturma |
+| MVC | HttpClient | — | API katmanıyla iletişim |
+
+---
+
+## 📁 Klasör Yapısı
+
+```
+CodeVaultSystem/
+├── CodeVaultSystem/
+│   ├── CodeVaultAPI/
+│   │   └── CodeVaultAPI/
+│   │       ├── Controllers/
+│   │       │   ├── DevelopersController.cs
+│   │       │   ├── ProjectsController.cs
+│   │       │   └── TechnologiesController.cs
+│   │       ├── Models/
+│   │       │   ├── Data/               # ApplicationDbContext
+│   │       │   ├── Developers.cs
+│   │       │   ├── Projects.cs
+│   │       │   └── Technologies.cs
+│   │       └── Program.cs
+│   │
+│   └── CodeVaultMVC/
+│       └── CodeVaultMVC/
+│           ├── Controllers/
+│           │   ├── AdminController.cs
+│           │   ├── DevelopersController.cs
+│           │   ├── ProjectsController.cs
+│           │   ├── TechnologiesController.cs
+│           │   └── MVC_Controllers/
+│           │       ├── AccountController.cs
+│           │       ├── CommentsController.cs
+│           │       ├── TasksController.cs
+│           │       └── UserController.cs
+│           ├── Models/
+│           │   ├── Data/               # ApplicationDbContext (Identity)
+│           │   ├── MVC_Tables/         # Tasks, Comments, Users
+│           │   ├── ViewModel/          # Dashboard, UserDashboard
+│           │   ├── Developers.cs
+│           │   ├── Projects.cs
+│           │   └── Technologies.cs
+│           ├── Views/
+│           └── Program.cs
+│
+└── .gitignore
+```
+
+---
+
 ## ✨ Öne Çıkan Özellikler
 
 ### 🛡️ Rol Tabanlı Giriş ve Parametre Tabanlı Taşıma (Cookie Olmadan)
