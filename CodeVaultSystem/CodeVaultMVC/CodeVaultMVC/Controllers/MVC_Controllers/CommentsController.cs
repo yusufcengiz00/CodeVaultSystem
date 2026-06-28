@@ -53,7 +53,7 @@ namespace CodeVaultMVC.Controllers
             var user = await _userManager.GetUserAsync(User);
             var currentUserId = user?.Id;
 
-            // Görev kontrolü: Görev kullanıcıya mı ait?
+            // Yorumun atanacağı görevin geçerli kullanıcıya ait olup olmadığını doğrula
             var targetTask = await _context.Tasks.FindAsync(vm.Comment.TaskID);
             if (targetTask == null || targetTask.UserId != currentUserId)
             {
@@ -98,7 +98,7 @@ namespace CodeVaultMVC.Controllers
             var existing = await _context.Comments.FindAsync(id);
             if (existing == null || existing.UserId != currentUserId) return NotFound();
 
-            // Görev kontrolü: Seçilen görev kullanıcıya mı ait?
+            // Güncellenen yorumun atanacağı görevin geçerli kullanıcıya ait olup olmadığını doğrula
             var targetTask = await _context.Tasks.FindAsync(vm.Comment.TaskID);
             if (targetTask == null || targetTask.UserId != currentUserId)
             {

@@ -66,7 +66,7 @@ namespace CodeVaultMVC.Controllers
             vm.Task.UserId = user.Id;
             if (string.IsNullOrEmpty(vm.Task.Status)) vm.Task.Status = "Bekliyor";
 
-            // Geliştirici profilini API'den sorgula
+            // E-posta adresiyle eşleşen geliştirici profilini API'den sorgula ve görevin DeveloperID alanını ata
             try
             {
                 var response = await _client.GetAsync(_apiBase + $"Developers/GetDeveloperByEmail/{Uri.EscapeDataString(user.Email)}");
@@ -142,7 +142,7 @@ namespace CodeVaultMVC.Controllers
             existing.ProjectID = vm.Task.ProjectID;
             existing.TechnologyID = vm.Task.TechnologyID;
 
-            // DeveloperID'yi API'den tekrar doğrula ve ata
+            // Düzenleme sırasında DeveloperID'yi API'den doğrula ve güncelle
             try
             {
                 var response = await _client.GetAsync(_apiBase + $"Developers/GetDeveloperByEmail/{Uri.EscapeDataString(user.Email)}");

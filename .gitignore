@@ -1,5 +1,42 @@
+## Visual Studio dosyaları
 .vs/
-bin/
-obj/
 *.user
 *.suo
+*.userosscache
+*.sln.docstates
+
+## Build çıktıları
+bin/
+obj/
+out/
+
+## NuGet paketleri
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Yayın dosyaları
+publish/
+
+## Log dosyaları
+*.log
+logs/
+
+## Geçici dosyalar
+*.tmp
+*.bak
+*.swp
+*~.nib
+*.Backup.tmp
+
+## Ortam ve hassas yapılandırmalar
+appsettings.Development.json
+.env
+.env.*
+secrets.json
+
+## OS dosyaları
+.DS_Store
+Thumbs.db

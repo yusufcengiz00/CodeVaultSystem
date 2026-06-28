@@ -1,21 +1,21 @@
 using CodeVaultAPI.Models.Data;
 using CodeVaultMVC.Models.MVC_Tables;
-using Microsoft.AspNetCore.Identity; // IdentityRole için gerekli
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// excel ve pdf kütüphanelerinin lisans tanımlamaları
+// Excel ve PDF kütüphanelerinin lisans tanımlamaları
 OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
 QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
 
-// Add services to the container.
+// Servis kayıtları
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
-// ADIM 1 GÜNCELLEMESİ: .AddRoles<IdentityRole>() eklendi
+// Identity yapılandırması: kullanıcı ve rol yönetimi
 builder.Services.AddIdentity<Users, IdentityRole>(options => {
     options.Password.RequireDigit = false;
     options.Password.RequiredLength = 6;
@@ -28,7 +28,7 @@ builder.Services.AddIdentity<Users, IdentityRole>(options => {
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// HTTP istek pipeline yapılandırması
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -40,7 +40,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// Authentication her zaman Authorization'dan önce gelmelidir
+// Authentication, Authorization'dan önce gelmelidir
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -48,19 +48,19 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Account}/{action=ChooseRole}/{id?}");
 
-// --- ADIM 3: ROL VE ADMIN ATAMA ---
+// Uygulama başlangıcında rol ve admin kullanıcısı oluştur
 using (var scope = app.Services.CreateScope())
 {
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<Users>>();
 
-    // 1. Admin rolünü oluştur
+    // Admin rolünü oluştur (yoksa)
     if (!await roleManager.RoleExistsAsync("Admin"))
     {
         await roleManager.CreateAsync(new IdentityRole("Admin"));
     }
 
-    // 2. Admin kullanıcısını ata ve oluştur
+    // Admin kullanıcısını oluştur ve Admin rolüne ata
     var adminEmail = "admin@admin.com";
     var adminUser = await userManager.FindByEmailAsync(adminEmail);
 
@@ -81,14 +81,13 @@ using (var scope = app.Services.CreateScope())
     }
     else
     {
-        // Şifreyi Admin123* olarak güncelle/sıfırla
+        // Mevcut admin kullanıcısının şifresini sıfırla
         if (await userManager.HasPasswordAsync(adminUser))
         {
             await userManager.RemovePasswordAsync(adminUser);
         }
         await userManager.AddPasswordAsync(adminUser, "Admin123*");
 
-        // Kullanıcı zaten Admin rolünde değilse ekle
         if (!await userManager.IsInRoleAsync(adminUser, "Admin"))
         {
             await userManager.AddToRoleAsync(adminUser, "Admin");

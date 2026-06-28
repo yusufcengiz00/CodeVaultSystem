@@ -1,6 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Newtonsoft.Json; // Bunu eklemeyi unutma
+using Newtonsoft.Json;
 
 namespace CodeVaultMVC.Models
 {
@@ -8,14 +8,14 @@ namespace CodeVaultMVC.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [JsonProperty("developerID")] // JSON'daki "developerID" ile eşleşir
+        [JsonProperty("developerID")]
         public int DeveloperID { get; set; }
 
-        [JsonProperty("fullName")] // JSON'daki "fullName" ile eşleşir
+        [JsonProperty("fullName")]
         public string FullName { get; set; }
 
         [Required(ErrorMessage = "Email Boş Bırakılamaz!")]
-        [JsonProperty("eMail")] // JSON'daki "eMail" ile eşleşir
+        [JsonProperty("eMail")]
         public string EMail { get; set; }
 
         [JsonProperty("githubUrl")]
