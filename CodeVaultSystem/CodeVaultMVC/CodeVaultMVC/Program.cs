@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// EPPlus ve QuestPDF Lisans Ayarları
+// excel ve pdf kütüphanelerinin lisans tanımlamaları
 OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
 QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
 

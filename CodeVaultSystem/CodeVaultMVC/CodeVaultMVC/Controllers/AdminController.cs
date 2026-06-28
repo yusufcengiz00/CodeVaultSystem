@@ -60,18 +60,22 @@ namespace CodeVaultMVC.Controllers
         [HttpGet]
         public async Task<IActionResult> DownloadExcel()
         {
+            // api'den verileri çekiyoruz
             var data = await GetDashboardDataAsync();
 
             using (var package = new ExcelPackage())
             {
-                // Projects Sheet
+                // projeler sayfası
                 var wsProjects = package.Workbook.Worksheets.Add("Projeler");
+                
+                // başlıklar
                 wsProjects.Cells[1, 1].Value = "Proje ID";
                 wsProjects.Cells[1, 2].Value = "Proje Adı";
                 wsProjects.Cells[1, 3].Value = "Açıklama";
                 wsProjects.Cells[1, 4].Value = "Proje URL";
                 wsProjects.Cells[1, 5].Value = "Durum";
                 
+                // başlık stilini ayarla
                 using (var range = wsProjects.Cells[1, 1, 1, 5])
                 {
                     range.Style.Font.Bold = true;
@@ -79,6 +83,7 @@ namespace CodeVaultMVC.Controllers
                     range.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGray);
                 }
 
+                // verileri yaz
                 int row = 2;
                 foreach (var p in data.Projects)
                 {
@@ -89,9 +94,11 @@ namespace CodeVaultMVC.Controllers
                     wsProjects.Cells[row, 5].Value = p.Status;
                     row++;
                 }
+                
+                // sütun genişliklerini otomatik sığdır
                 wsProjects.Cells[wsProjects.Dimension.Address].AutoFitColumns();
 
-                // Technologies Sheet
+                // teknolojiler sayfası
                 var wsTechs = package.Workbook.Worksheets.Add("Teknolojiler");
                 wsTechs.Cells[1, 1].Value = "Teknoloji ID";
                 wsTechs.Cells[1, 2].Value = "Teknoloji Adı";
@@ -116,7 +123,7 @@ namespace CodeVaultMVC.Controllers
                 }
                 wsTechs.Cells[wsTechs.Dimension.Address].AutoFitColumns();
 
-                // Developers Sheet
+                // geliştiriciler sayfası
                 var wsDevs = package.Workbook.Worksheets.Add("Geliştiriciler");
                 wsDevs.Cells[1, 1].Value = "Geliştirici ID";
                 wsDevs.Cells[1, 2].Value = "Ad Soyad";
@@ -151,28 +158,32 @@ namespace CodeVaultMVC.Controllers
         [HttpGet]
         public async Task<IActionResult> DownloadPdf()
         {
+            // api'den verileri çekiyoruz
             var data = await GetDashboardDataAsync();
 
             var document = Document.Create(container =>
             {
                 container.Page(page =>
                 {
+                    // sayfa yapısı ve font ayarları
                     page.Size(PageSizes.A4);
                     page.Margin(1.5f, Unit.Centimetre);
                     page.PageColor(Colors.White);
                     page.DefaultTextStyle(x => x.FontFamily("Arial").FontSize(10));
 
+                    // sayfa üst başlığı
                     page.Header()
                         .Text("CodeVault Admin Panel Raporu")
                         .SemiBold().FontSize(18).FontColor(Colors.Indigo.Darken3);
 
+                    // içerik
                     page.Content()
                         .PaddingVertical(1, Unit.Centimetre)
                         .Column(column =>
                         {
                             column.Spacing(15);
 
-                            // Section: Projeler
+                            // projeler tablosu
                             column.Item().Text("Projeler").FontSize(14).Bold().FontColor(Colors.Indigo.Darken1);
                             column.Item().Table(table =>
                             {
@@ -201,9 +212,10 @@ namespace CodeVaultMVC.Controllers
                                 }
                             });
 
+                            // sayfalar arası kesme
                             column.Item().PageBreak();
 
-                            // Section: Teknolojiler
+                            // teknolojiler tablosu
                             column.Item().Text("Teknolojiler").FontSize(14).Bold().FontColor(Colors.Indigo.Darken1);
                             column.Item().Table(table =>
                             {
@@ -234,7 +246,7 @@ namespace CodeVaultMVC.Controllers
 
                             column.Item().PageBreak();
 
-                            // Section: Geliştiriciler
+                            // geliştiriciler tablosu
                             column.Item().Text("Geliştiriciler").FontSize(14).Bold().FontColor(Colors.Indigo.Darken1);
                             column.Item().Table(table =>
                             {
@@ -261,6 +273,7 @@ namespace CodeVaultMVC.Controllers
                             });
                         });
 
+                    // sayfa numaraları
                     page.Footer()
                         .AlignCenter()
                         .Text(x =>
