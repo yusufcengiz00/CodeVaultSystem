@@ -139,3 +139,66 @@ dotnet run
   - **Parola:** `Admin123*`
 * **Geliştirici (Developer) Girişi:**
   - Rol seçim ekranında **Geliştirici Girişi** -> **Kayıt Ol** adımlarını izleyerek saniyeler içinde yeni bir hesap oluşturup giriş yapabilirsiniz. Profiliniz otomatik olarak oluşturulup eşleştirilecektir.
+ 
+---
+
+## 📸 Uygulama Görselleri
+
+### 👤 Kullanıcı Portalı
+
+<p align="center">
+<img width="1490" height="998" alt="image" src="https://github.com/user-attachments/assets/52d89a57-f66a-408c-8ede-57940792396a" />
+</p>
+
+---
+
+### 👥 Kullanıcı Portalı Görev Yönetim Ekranı
+
+<p align="center">
+<img width="1515" height="527" alt="image" src="https://github.com/user-attachments/assets/eef094b3-8ead-4cbc-a1ef-2e8cf4a088d7" />
+</p>
+```
+
+---
+
+### 👥 Kullanıcı Portalı Yorum Yönetim Ekranı
+
+<p align="center">
+   <img width="1512" height="522" alt="image" src="https://github.com/user-attachments/assets/8b4964bc-0aeb-4596-809e-19d3c4080b4d" />
+</p>
+
+---
+
+### 🔐 Admin Panel
+
+<p align="center">
+<img width="1512" height="1011" alt="image" src="https://github.com/user-attachments/assets/b9983ea9-0a5c-4767-8ac5-a5db9a19749b" />
+</p>
+
+---
+
+### 🧾 Proje Yönetimi Ekranı
+
+<p align="center">
+<img width="1513" height="607" alt="image" src="https://github.com/user-attachments/assets/6f8ea352-837d-43f5-ac43-78f8e57aceba" />
+</p>
+
+---
+
+
+### 🛒 Geliştirici Yönetim Ekranı
+
+<p align="center">
+<img width="1516" height="612" alt="image" src="https://github.com/user-attachments/assets/70bba451-9097-4ce6-ba7c-88ec2c80dfdd" />
+</p>
+
+---
+
+### 📦 Kullanıcı Yönetim Ekranı
+
+<p align="center">
+<img width="1517" height="617" alt="image" src="https://github.com/user-attachments/assets/e7d8fae3-d3bd-41b4-ac5a-9a4f5edde16d" />
+</p>
+
+
+
