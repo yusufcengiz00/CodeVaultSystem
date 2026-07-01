@@ -157,7 +157,6 @@ dotnet run
 <p align="center">
 <img width="1515" height="527" alt="image" src="https://github.com/user-attachments/assets/eef094b3-8ead-4cbc-a1ef-2e8cf4a088d7" />
 </p>
-```
 
 ---
 
